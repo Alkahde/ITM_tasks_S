@@ -6,6 +6,7 @@
 
     <changeSet id="1" author="Aliona Gaponova">
         <createTable tableName="Task">
+
             <column name="id" type="UUID">
                 <constraints primaryKey="true"/>
             </column>
@@ -18,8 +19,19 @@
             <column name="is_archived" type="boolean" defaultValueBoolean="false">
                 <constraints nullable="false"/>
             </column>
+            <column name="created" type="Timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated" type="Timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="UUID">
+                <constraints nullable="false"/>
+            </column>
 
         </createTable>
-
     </changeSet>
 </databaseChangeLog>
