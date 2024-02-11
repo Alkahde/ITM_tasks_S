@@ -43,9 +43,8 @@ public abstract class AuditingBaseEntity extends BaseEntity{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
         AuditingBaseEntity that = (AuditingBaseEntity) o;
-        return Objects.equals(created, that.created) && Objects.equals(updated, that.updated)&&Objects.equals(created_by, that.created_by) && Objects.equals(updated_by, that.updated_by);
+        return id != null && Objects.equals(id, that.id);
     }
 
     @Override

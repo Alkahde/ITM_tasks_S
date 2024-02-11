@@ -24,26 +24,25 @@ import java.util.Objects;
 
 public class Task extends AuditingBaseEntity {
 
-@Column(name = "title", nullable = false)
-private String title;
+    @Column(name = "title", nullable = false)
+    private String title;
 
-@Column(name = "text", nullable = false)
-private String text;
+    @Column(name = "text", nullable = false)
+    private String text;
 
-@Column(name = "is_archived", nullable = false)
-private boolean is_archived = false;
+    @Column(name = "is_archived", nullable = false)
+    private boolean is_archived = false;
 
-@Override
-public boolean equals(Object o) {
-if (this == o) return false;
-if (o == null || getClass() != o.getClass()) return false;
-if (!super.equals(o)) return false;
-Task that = (Task) o;
-return Objects.equals(title, that.title) && Objects.equals(text, that.text) && (is_archived == that.is_archived);
-}
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return false;
+        if (o == null || getClass() != o.getClass()) return false;
+        Task that = (Task) o;
+        return id != null && Objects.equals(id, that.id);
+    }
 
-@Override
-public int hashCode() {
-                return Objects.hash(super.hashCode(), title, text,is_archived);
-        }
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), title, text, is_archived);
+    }
 }
