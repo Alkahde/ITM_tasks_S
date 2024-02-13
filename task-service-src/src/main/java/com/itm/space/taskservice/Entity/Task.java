@@ -21,7 +21,6 @@ import java.util.Objects;
 @Entity
 @Builder
 @Table(name = "tasks")
-
 public class Task extends AuditingBaseEntity {
 
     @Column(name = "title", nullable = false)

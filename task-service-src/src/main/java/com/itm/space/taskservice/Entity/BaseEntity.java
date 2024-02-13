@@ -15,6 +15,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BaseEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     protected UUID id;
