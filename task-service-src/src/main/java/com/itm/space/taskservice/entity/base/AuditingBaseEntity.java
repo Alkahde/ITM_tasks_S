@@ -1,4 +1,4 @@
-package com.itm.space.taskservice.Entity;
+package com.itm.space.taskservice.entity.base;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
@@ -12,7 +12,7 @@ import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import java.security.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -21,18 +21,18 @@ import java.util.UUID;
 @NoArgsConstructor
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-public abstract class AuditingBaseEntity extends BaseEntity{
+public class AuditingBaseEntity extends BaseEntity {
 
     @CreatedDate
     @Column(name = "created", nullable = false)
-    private Timestamp created;
+    private LocalDateTime created;
 
     @LastModifiedDate
-    @Column(name = "updated")
-    private Timestamp updated;
+    @Column(name = "updated", nullable = false)
+    private LocalDateTime updated;
 
     @CreatedBy
-    @Column(name = "created_by", nullable = false)
+    @Column(name = "created_by")
     private UUID created_by;
 
     @LastModifiedBy

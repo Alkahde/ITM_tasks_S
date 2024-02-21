@@ -11,6 +11,7 @@ spring:
     username: ${DATABASE_USERNAME:postgres}
     password: ${DATABASE_PASSWORD:postgres}
 
+
   jpa:
     hibernate:
       ddl-auto: validate
@@ -18,11 +19,11 @@ spring:
     properties:
       hibernate:
         format_sql: true
-        show_sql: false
+        show_sql: true
     open-in-view: false
 
   liquibase:
-    change-log: classpath:db/changelog/db.changelog-master.xml
+    change-log: classpath:db/changelog/db.changelog.xml
 
   security:
     oauth2:

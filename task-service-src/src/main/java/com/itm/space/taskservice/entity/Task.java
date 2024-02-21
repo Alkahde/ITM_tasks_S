@@ -1,6 +1,7 @@
-package com.itm.space.taskservice.Entity;
+package com.itm.space.taskservice.entity;
 
 
+import com.itm.space.taskservice.entity.base.AuditingBaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
