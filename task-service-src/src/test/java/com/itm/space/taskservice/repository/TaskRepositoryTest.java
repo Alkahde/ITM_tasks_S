@@ -14,7 +14,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 public class TaskRepositoryTest extends BaseIntegrationTest {
 
    @Autowired
-    private TaskRepository taskRepository;
+   private TaskRepository taskRepository;
 
 @DisplayName("Тест на получение и сохранение сущности")
 @Test
@@ -33,5 +33,5 @@ public void SaveAndFindTask(){
 
     Task findTask = taskRepository.findTaskById(taskId);
     assertThat(findTask).isEqualTo(task);
-}
+ }
 }
