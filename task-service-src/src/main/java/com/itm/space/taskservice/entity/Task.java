@@ -45,4 +45,6 @@ public class Task extends AuditingBaseEntity {
     public int hashCode() {
         return Objects.hash(super.hashCode(), title, text, is_archived);
     }
+
+
 }
